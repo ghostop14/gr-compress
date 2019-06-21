@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<block>
+  <name>Compressed File Source</name>
+  <key>compress_CompressedFileSource</key>
+  <category>[Compression]</category>
+  <import>import compress</import>
+	<import>import pmt</import>
+  <make>compress.CompressedFileSource($type.size, $filename, $repeat)
+self.$(id).set_begin_tag($begin_tag)</make>
+	<callback>open($file, $repeat)</callback>
+    <callback>self.$(id).set_begin_tag($begin_tag)</callback>
+	<param>
+		<name>File</name>
+		<key>filename</key>
+		<value></value>
+		<type>file_open</type>
+	</param>
+	<param>
+		<name>Output Type</name>
+		<key>type</key>
+		<type>enum</type>
+		<option>
+			<name>Complex</name>
+			<key>complex</key>
+			<opt>size:gr.sizeof_gr_complex</opt>
+		</option>
+		<option>
+			<name>Float</name>
+			<key>float</key>
+			<opt>size:gr.sizeof_float</opt>
+		</option>
+		<option>
+			<name>Int</name>
+			<key>int</key>
+			<opt>size:gr.sizeof_int</opt>
+		</option>
+		<option>
+			<name>Short</name>
+			<key>short</key>
+			<opt>size:gr.sizeof_short</opt>
+		</option>
+		<option>
+			<name>Byte</name>
+			<key>byte</key>
+			<opt>size:gr.sizeof_char</opt>
+		</option>
+	</param>
+	<param>
+		<name>Repeat</name>
+		<key>repeat</key>
+		<type>enum</type>
+		<option>
+			<name>Yes</name>
+			<key>True</key>
+		</option>
+		<option>
+			<name>No</name>
+			<key>False</key>
+		</option>
+	</param>
+	<param>
+		<name>Add begin tag</name>
+		<key>begin_tag</key>
+		<value>pmt.PMT_NIL</value>
+		<type>raw</type>
+	</param>
+	<source>
+		<name>out</name>
+		<type>$type</type>
+	</source>
+</block>
