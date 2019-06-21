@@ -7,6 +7,7 @@ Note: that is OOT set is a work in progress.
 Compression ratios vary based on the data type being compressed. Smaller data types such as BYTE compress really well because there is more repetition in the data stream.  Float complex compresses poorly due to the variations.  Although this can be overcome for transmissions over UDP/TCP sinks or saving to a file by first doing a conversion such as Complex->IChar or Complex->IShort then reversing it on the other side.
 
 Some measured statistics based on real world signals:
+
 Interleaved Byte (SC8 / IChar): 30-70% compression depending on the data (blocks in verbose mode will tell you how you're doing) (Streaming ATA data compressed 70%, streaming radio compressed 30%)
 
 Interleaved Short (SC16 / IShort) such as USRP Source in Complex Int16 mode: 30% compression
