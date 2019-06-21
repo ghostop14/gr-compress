@@ -53,9 +53,6 @@ target_link_libraries(
 	${Boost_LIBRARIES} 
 	${GNURADIO_ALL_LIBRARIES} 
   	zstd
-  	pthread
-  	z
-  	lzma
 )
 
 set_target_properties(gnuradio-compress PROPERTIES DEFINE_SYMBOL "gnuradio_compress_EXPORTS")
