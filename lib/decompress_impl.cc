@@ -171,7 +171,7 @@ namespace gr {
 		// Queue it for local work
 		//unsigned char achar;
 
-		if (actualDecompressedSize > uncompressedSize) {
+		if (actualDecompressedSize == 0) {
 			std::cerr << "Decompression ERROR: Decompressor returned a size (" << actualDecompressedSize <<
 					") > expected decompressed size (" << uncompressedSize << ").  Not compressed data?" << std::endl;
 		}

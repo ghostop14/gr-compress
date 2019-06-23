@@ -6,6 +6,7 @@
  */
 
 #include "ZStdDecompressor.h"
+#include <iostream>
 
 namespace gr {
   namespace compress {
@@ -22,7 +23,14 @@ namespace gr {
 		 *  If user cannot imply a maximum upper bound, it's better to use streaming mode to decompress data.
 		 *  @return : the number of bytes decompressed into `dst` (<= `dstCapacity`),
 		 *            or an errorCode if it fails (which can be tested using ZSTD_isError()). */
-		return ZSTD_decompressDCtx(pCompressionContext,dst,dstCapacity,src, srcSize);
+		size_t retVal = ZSTD_decompressDCtx(pCompressionContext,dst,dstCapacity,src, srcSize);
+
+		if (ZSTD_isError(retVal)) {
+			std::cerr << "[ZStdDecompressor] An error was returned during decompression: " << ZSTD_getErrorName(retVal) << std::endl;
+			return 0;
+		}
+
+		return retVal;
 	}
 
 	ZStdDecompressor::~ZStdDecompressor() {
