@@ -24,26 +24,16 @@ There are a number of example flowgraphs in the examples directory.
 
 ## Building
 
-Prerequisites:  Install the zstd compression library
+Prerequisites:  Install the zstd compression library.  Note that at this time, the multi-threaded build is NOT the default, so you have to set the ZSTD_MULTITHREAD flag at build time to get it.  If you get a runtime compression error about not being able to set worker threads, it's because the library isn't built multi-threaded.
 
 git clone https://github.com/facebook/zstd.git  
 
-cd zstd/lib
+cd zstd
 
-For some reason, the default build does not include multithreading support in the library.  Hopefully they'll fix that, but this can be enabled by editing lib/Makefile
-
-Find the line "lib: libzstd.a libzstd".  Add a line above it to define the multithread compilation flag so the lines look like this:
-
-lib: CPPFLAGS += -DZSTD_MULTITHREAD
-
-lib: libzstd.a libzstd
-
-
-make
+CPPFLAGS=-DZSTD_MULTITHREAD make
 
 sudo make install
 
-That will provide the zstd library.  The zstd command-line tool that comes with it also does a good job of file-based compression and you can specify multiple threads with the -T# parameter.
 
 
 After that, the build is pretty standard:

@@ -4,7 +4,7 @@
   <key>compress_compress</key>
   <category>[Compression]</category>
   <import>import compress</import>
-  <make>compress.compress($type.size,64000,$numThreads,$addheader,$verbose)</make>
+  <make>compress.compress($type.size,$blocksize,$numThreads,$addheader,$verbose)</make>
 	<param>
 		<name>Input Type</name>
 		<key>type</key>
@@ -47,6 +47,12 @@
 		<type>int</type>
 	</param>
 	<param>
+		<name>Block Size</name>
+		<key>blocksize</key>
+		<value>64000</value>
+		<type>int</type>
+	</param>
+	<param>
 		<name>Add Header</name>
 		<key>addheader</key>
 		<type>enum</type>
@@ -81,4 +87,9 @@
     <name>compressed</name>
     <type>message</type>
   </source>
+  <doc>
+  This block provides compression based on the zstd compression library.  Compression ratios vary based on input type and data content.  Complex compress the worst (about 10%), SC16 about 30%, BYTE the best (anywhere from 50-70% depending on the variation in the content).  It is possible to vary both the number of threads used as well as the requested block size to compress.  Actual block sizes will vary around the requested block size to align with work thread actual data.  The actual uncompressed size for a block is passed downstream as a message attribute as it is required for decompression.  Generally it is not recommended to adjust the block size unless you know what you are doing.  Too small a block and the compression ratio may drop.  Too high and you may get more delay in the flowgraph.
+  
+  The Header is an optional set of bytes prepended to the output byte stream.  This should generally not be needed if working with the messages as they contain the necessary metadata.
+  </doc>
 </block>

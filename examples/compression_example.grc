@@ -46,7 +46,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>test_compression</value>
+      <value>compression_example</value>
     </param>
     <param>
       <key>max_nouts</key>
@@ -117,10 +117,10 @@
     </param>
   </block>
   <block>
-    <key>analog_nbfm_rx</key>
+    <key>blocks_file_source</key>
     <param>
-      <key>audio_rate</key>
-      <value>48000</value>
+      <key>begin_tag</key>
+      <value>pmt.PMT_NIL</value>
     </param>
     <param>
       <key>alias</key>
@@ -139,8 +139,12 @@
       <value>True</value>
     </param>
     <param>
+      <key>file</key>
+      <value>/opt/sdr/gnuradio/gnuradio_recordings/NOAA_weather_radio_162.425MHz_NBFM_600KSPS_48KFilter.iq</value>
+    </param>
+    <param>
       <key>_coordinate</key>
-      <value>(1056, 376)</value>
+      <value>(40, 124)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -148,11 +152,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>analog_nbfm_rx_0</value>
-    </param>
-    <param>
-      <key>max_dev</key>
-      <value>5e3</value>
+      <value>blocks_file_source_0</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -161,108 +161,14 @@
     <param>
       <key>minoutbuf</key>
       <value>0</value>
-    </param>
-    <param>
-      <key>quad_rate</key>
-      <value>480000</value>
-    </param>
-    <param>
-      <key>tau</key>
-      <value>75e-6</value>
-    </param>
-  </block>
-  <block>
-    <key>audio_sink</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>device_name</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1128, 508)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>audio_sink_0</value>
-    </param>
-    <param>
-      <key>num_inputs</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>ok_to_block</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>samp_rate</key>
-      <value>48000</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_multiply_const_vxx</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>const</key>
-      <value>0.5</value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(960, 500)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_multiply_const_vxx_0</value>
     </param>
     <param>
       <key>type</key>
-      <value>float</value>
+      <value>complex</value>
     </param>
     <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
+      <key>repeat</key>
+      <value>True</value>
     </param>
     <param>
       <key>vlen</key>
@@ -285,11 +191,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>True</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(256, 356)</value>
+      <value>(192, 228)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -325,87 +231,9 @@
     </param>
   </block>
   <block>
-    <key>compress_CompressedMsgToStream</key>
+    <key>compress_CompressedFileSink</key>
     <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(528, 168)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>compress_CompressedMsgToStream_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>compress_StreamToDecompressionMsg</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(544, 344)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>compress_StreamToDecompressionMsg_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>compress_compress</key>
-    <param>
-      <key>addheader</key>
+      <key>append</key>
       <value>False</value>
     </param>
     <param>
@@ -422,11 +250,113 @@
     </param>
     <param>
       <key>_enabled</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>file</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(512, 388)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>compress_CompressedFileSink_0</value>
+    </param>
+    <param>
+      <key>unbuffered</key>
+      <value>False</value>
+    </param>
+  </block>
+  <block>
+    <key>compress_CompressedFileSource</key>
+    <param>
+      <key>begin_tag</key>
+      <value>pmt.PMT_NIL</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>filename</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(32, 388)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>compress_CompressedFileSource_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>complex</value>
+    </param>
+    <param>
+      <key>repeat</key>
+      <value>True</value>
+    </param>
+  </block>
+  <block>
+    <key>compress_compress</key>
+    <param>
+      <key>addheader</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>blocksize</key>
+      <value>64000</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
       <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(360, 156)</value>
+      <value>(320, 112)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -477,7 +407,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(784, 328)</value>
+      <value>(784, 184)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -509,38 +439,22 @@
     </param>
   </block>
   <block>
-    <key>filerepeater_file_repeater_ex</key>
+    <key>note</key>
     <param>
       <key>alias</key>
       <value></value>
     </param>
     <param>
       <key>comment</key>
-      <value>Float Complex Data</value>
-    </param>
-    <param>
-      <key>complexconv</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>affinity</key>
       <value></value>
-    </param>
-    <param>
-      <key>delayFirstStart</key>
-      <value>0.0</value>
     </param>
     <param>
       <key>_enabled</key>
       <value>True</value>
     </param>
     <param>
-      <key>file</key>
-      <value>/opt/sdr/gnuradio/gnuradio_recordings/NOAA_weather_radio_162.425MHz_NBFM_600KSPS_NoFilter.iq</value>
-    </param>
-    <param>
       <key>_coordinate</key>
-      <value>(24, 112)</value>
+      <value>(632, 24)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -548,47 +462,15 @@
     </param>
     <param>
       <key>id</key>
-      <value>filerepeater_file_repeater_ex_0</value>
+      <value>note_0</value>
     </param>
     <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>repeat_times</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>repeat</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>verbose</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>repeat_delay</key>
-      <value>0</value>
+      <key>note</key>
+      <value>Network-based</value>
     </param>
   </block>
   <block>
-    <key>low_pass_filter</key>
-    <param>
-      <key>beta</key>
-      <value>6.76</value>
-    </param>
+    <key>note</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -598,64 +480,86 @@
       <value></value>
     </param>
     <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>cutoff_freq</key>
-      <value>3e3</value>
-    </param>
-    <param>
-      <key>decim</key>
-      <value>1</value>
-    </param>
-    <param>
       <key>_enabled</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>fir_filter_ccf</value>
+      <value>True</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(72, 312)</value>
+      <value>(536, 332)</value>
     </param>
     <param>
       <key>_rotation</key>
       <value>0</value>
     </param>
     <param>
-      <key>gain</key>
-      <value>1</value>
+      <key>id</key>
+      <value>note_0_0</value>
+    </param>
+    <param>
+      <key>note</key>
+      <value>File Save</value>
+    </param>
+  </block>
+  <block>
+    <key>note</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(32, 76)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
     </param>
     <param>
       <key>id</key>
-      <value>low_pass_filter_3_0</value>
+      <value>note_0_1</value>
     </param>
     <param>
-      <key>interp</key>
-      <value>1</value>
+      <key>note</key>
+      <value>Regular File Source</value>
+    </param>
+  </block>
+  <block>
+    <key>note</key>
+    <param>
+      <key>alias</key>
+      <value></value>
     </param>
     <param>
-      <key>maxoutbuf</key>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(32, 476)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
       <value>0</value>
     </param>
     <param>
-      <key>minoutbuf</key>
-      <value>0</value>
+      <key>id</key>
+      <value>note_0_1_0</value>
     </param>
     <param>
-      <key>samp_rate</key>
-      <value>samp_rate</value>
-    </param>
-    <param>
-      <key>width</key>
-      <value>3e3*0.2</value>
-    </param>
-    <param>
-      <key>win</key>
-      <value>firdes.WIN_HAMMING</value>
+      <key>note</key>
+      <value>Compressed File Source</value>
     </param>
   </block>
   <block>
@@ -706,7 +610,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1056, 28)</value>
+      <value>(1056, 188)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -958,7 +862,11 @@
     </param>
   </block>
   <block>
-    <key>rational_resampler_xxx</key>
+    <key>zeromq_pull_msg_source</key>
+    <param>
+      <key>address</key>
+      <value>tcp://127.0.0.1:2000</value>
+    </param>
     <param>
       <key>alias</key>
       <value></value>
@@ -972,20 +880,12 @@
       <value></value>
     </param>
     <param>
-      <key>decim</key>
-      <value>5</value>
-    </param>
-    <param>
       <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>fbw</key>
-      <value>0</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1032, 232)</value>
+      <value>(728, 84)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -993,11 +893,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>rational_resampler_xxx_1</value>
-    </param>
-    <param>
-      <key>interp</key>
-      <value>4</value>
+      <value>zeromq_pull_msg_source_0</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -1008,23 +904,52 @@
       <value>0</value>
     </param>
     <param>
-      <key>taps</key>
+      <key>timeout</key>
+      <value>100</value>
+    </param>
+  </block>
+  <block>
+    <key>zeromq_push_msg_sink</key>
+    <param>
+      <key>address</key>
+      <value>tcp://*:2000</value>
+    </param>
+    <param>
+      <key>alias</key>
       <value></value>
     </param>
     <param>
-      <key>type</key>
-      <value>ccc</value>
+      <key>comment</key>
+      <value>Listen for connections</value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(480, 84)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>zeromq_push_msg_sink_0</value>
+    </param>
+    <param>
+      <key>timeout</key>
+      <value>100</value>
     </param>
   </block>
   <connection>
-    <source_block_id>analog_nbfm_rx_0</source_block_id>
-    <sink_block_id>blocks_multiply_const_vxx_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_multiply_const_vxx_0</source_block_id>
-    <sink_block_id>audio_sink_0</sink_block_id>
+    <source_block_id>blocks_file_source_0</source_block_id>
+    <sink_block_id>blocks_throttle_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -1035,22 +960,22 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>compress_CompressedMsgToStream_0</source_block_id>
-    <sink_block_id>compress_StreamToDecompressionMsg_0</sink_block_id>
+    <source_block_id>compress_CompressedFileSource_0</source_block_id>
+    <sink_block_id>blocks_throttle_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>compress_StreamToDecompressionMsg_0</source_block_id>
-    <sink_block_id>compress_decompress_0</sink_block_id>
+    <source_block_id>compress_compress_0</source_block_id>
+    <sink_block_id>compress_CompressedFileSink_0</sink_block_id>
     <source_key>compressed</source_key>
     <sink_key>compressedin</sink_key>
   </connection>
   <connection>
     <source_block_id>compress_compress_0</source_block_id>
-    <sink_block_id>compress_CompressedMsgToStream_0</sink_block_id>
+    <sink_block_id>zeromq_push_msg_sink_0</sink_block_id>
     <source_key>compressed</source_key>
-    <sink_key>compressed</sink_key>
+    <sink_key>in</sink_key>
   </connection>
   <connection>
     <source_block_id>compress_decompress_0</source_block_id>
@@ -1059,27 +984,9 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>compress_decompress_0</source_block_id>
-    <sink_block_id>rational_resampler_xxx_1</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>filerepeater_file_repeater_ex_0</source_block_id>
-    <sink_block_id>low_pass_filter_3_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>low_pass_filter_3_0</source_block_id>
-    <sink_block_id>blocks_throttle_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>rational_resampler_xxx_1</source_block_id>
-    <sink_block_id>analog_nbfm_rx_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
+    <source_block_id>zeromq_pull_msg_source_0</source_block_id>
+    <sink_block_id>compress_decompress_0</sink_block_id>
+    <source_key>out</source_key>
+    <sink_key>compressedin</sink_key>
   </connection>
 </flow_graph>
