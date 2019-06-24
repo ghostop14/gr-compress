@@ -68,4 +68,7 @@ self.$(id).set_begin_tag($begin_tag)</make>
 		<name>out</name>
 		<type>$type</type>
 	</source>
+	<doc>
+	This block will read a file compressed with Compressed File Sink and output the decompressed data as the indicated data type.
+	</doc>
 </block>
