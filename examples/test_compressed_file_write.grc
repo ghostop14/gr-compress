@@ -352,7 +352,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(880, 516)</value>
+      <value>(840, 524)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -376,6 +376,10 @@
     <param>
       <key>alias</key>
       <value></value>
+    </param>
+    <param>
+      <key>blocksize</key>
+      <value>64000</value>
     </param>
     <param>
       <key>comment</key>
@@ -416,6 +420,10 @@
     <param>
       <key>numThreads</key>
       <value>4</value>
+    </param>
+    <param>
+      <key>verbose</key>
+      <value>False</value>
     </param>
   </block>
   <block>
