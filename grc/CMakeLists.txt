@@ -24,5 +24,7 @@ install(FILES
     compress_CompressedFileSink.xml
     compress_CompressedFileSource.xml
     compress_CompressedMsgToStream.xml
-    compress_StreamToDecompressionMsg.xml DESTINATION share/gnuradio/grc/blocks
+    compress_StreamToDecompressionMsg.xml
+    compress_ComplexToPacked12.xml
+    compress_Packed12ToComplex.xml DESTINATION share/gnuradio/grc/blocks
 )

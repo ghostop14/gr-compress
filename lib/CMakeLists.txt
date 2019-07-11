@@ -38,6 +38,8 @@ list(APPEND compress_sources
     CompressedFileSource_impl.cc
     CompressedMsgToStream_impl.cc
     StreamToDecompressionMsg_impl.cc
+    ComplexToPacked12_impl.cc
+    Packed12ToComplex_impl.cc
 )
 
 set(compress_sources "${compress_sources}" PARENT_SCOPE)

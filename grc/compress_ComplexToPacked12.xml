@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<block>
+  <name>Complex To Packed12</name>
+  <key>compress_ComplexToPacked12</key>
+  <category>[Compression]</category>
+  <import>import compress</import>
+  <make>compress.ComplexToPacked12()</make>
+	<sink>
+		<name>in</name>
+		<type>complex</type>
+	</sink>
+
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+  <doc>
+  This block takes a complex input, scales it to a 12-bit integer, then packs it into 3 bytes.  Net result is 8 bytes of data is compressed to 3.
+  </doc>
+</block>

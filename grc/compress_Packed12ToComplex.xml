@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<block>
+  <name>Packed12 To Complex</name>
+  <key>compress_Packed12ToComplex</key>
+  <category>[Compression]</category>
+  <import>import compress</import>
+  <make>compress.Packed12ToComplex()</make>
+	<sink>
+		<name>in</name>
+		<type>byte</type>
+	</sink>
+
+  <source>
+    <name>out</name>
+    <type>complex</type>
+  </source>
+  <doc>
+  This block takes 2 12-bit integers packed into 3 bytes and expands them to a complex.  This block reverses the ComplexToPacked12 process.
+  </doc>
+</block>

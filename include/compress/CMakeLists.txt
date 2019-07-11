@@ -28,5 +28,7 @@ install(FILES
     CompressedFileSink.h
     CompressedFileSource.h
     CompressedMsgToStream.h
-    StreamToDecompressionMsg.h DESTINATION include/compress
+    StreamToDecompressionMsg.h
+    ComplexToPacked12.h
+    Packed12ToComplex.h DESTINATION include/compress
 )

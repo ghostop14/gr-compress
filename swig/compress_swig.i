@@ -14,6 +14,8 @@
 #include "compress/CompressedFileSource.h"
 #include "compress/CompressedMsgToStream.h"
 #include "compress/StreamToDecompressionMsg.h"
+#include "compress/ComplexToPacked12.h"
+#include "compress/Packed12ToComplex.h"
 %}
 
 
@@ -29,3 +31,7 @@ GR_SWIG_BLOCK_MAGIC2(compress, CompressedFileSource);
 GR_SWIG_BLOCK_MAGIC2(compress, CompressedMsgToStream);
 %include "compress/StreamToDecompressionMsg.h"
 GR_SWIG_BLOCK_MAGIC2(compress, StreamToDecompressionMsg);
+%include "compress/ComplexToPacked12.h"
+GR_SWIG_BLOCK_MAGIC2(compress, ComplexToPacked12);
+%include "compress/Packed12ToComplex.h"
+GR_SWIG_BLOCK_MAGIC2(compress, Packed12ToComplex);
