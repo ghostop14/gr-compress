@@ -24,7 +24,7 @@
 #include "config.h"
 #endif
 
-#include "file_sink_base.h"
+#include <compress/file_sink_base.h>
 #include <cstdio>
 #include <sys/types.h>
 #include <sys/stat.h>

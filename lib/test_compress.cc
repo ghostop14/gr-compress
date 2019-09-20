@@ -24,12 +24,12 @@
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
-
+/*
 #include <cppunit/TextTestRunner.h>
 #include <cppunit/XmlOutputter.h>
 
 #include <gnuradio/unittests.h>
-#include "qa_compress.h"
+*/
 #include <iostream>
 #include <fstream>
 

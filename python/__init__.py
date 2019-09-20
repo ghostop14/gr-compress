@@ -22,13 +22,14 @@
 This is the GNU Radio COMPRESS module. Place your Python package
 description here (python/__init__.py).
 '''
+from __future__ import unicode_literals
 
 # import swig generated symbols into the compress namespace
 try:
-	# this might fail if the module is python-only
-	from compress_swig import *
+    # this might fail if the module is python-only
+    from .compress_swig import *
 except ImportError:
-	pass
+    pass
 
 # import any pure python here
 #

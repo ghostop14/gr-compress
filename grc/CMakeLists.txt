@@ -19,12 +19,12 @@
 # Boston, MA 02110-1301, USA.
 
 install(FILES
-    compress_compress.xml
-    compress_decompress.xml
-    compress_CompressedFileSink.xml
-    compress_CompressedFileSource.xml
-    compress_CompressedMsgToStream.xml
-    compress_StreamToDecompressionMsg.xml
-    compress_ComplexToPacked12.xml
-    compress_Packed12ToComplex.xml DESTINATION share/gnuradio/grc/blocks
+    compress_compress.block.yml
+    compress_decompress.block.yml
+    compress_CompressedFileSink.block.yml
+    compress_CompressedFileSource.block.yml
+    compress_CompressedMsgToStream.block.yml
+    compress_StreamToDecompressionMsg.block.yml
+    compress_ComplexToPacked12.block.yml
+    compress_Packed12ToComplex.block.yml DESTINATION share/gnuradio/grc/blocks
 )
