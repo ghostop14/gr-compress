@@ -83,9 +83,38 @@ ELSE()
 ENDIF()
 
 ########################################################################
+# Disable complex math NaN/INFO range checking for performance
+########################################################################
+include(CheckCXXCompilerFlag)
+check_cxx_compiler_flag(-fcx-limited-range HAVE_CX_LIMITED_RANGE)
+if(HAVE_CX_LIMITED_RANGE)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fcx-limited-range")
+endif(HAVE_CX_LIMITED_RANGE)
+
+########################################################################
+# Setup Native Capabilities Flag
+########################################################################
+option(ENABLE_NATIVE "Enable native build optimizations" ON)
+IF(UNIX)
+    IF (ENABLE_NATIVE)
+        MESSAGE(STATUS "Found GNU Radio native optimization flag.  Setting native CPU optimization flags.")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native -ftree-vectorize")
+        set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -march=native -ftree-vectorize")
+    ELSE (ENABLE_NATIVE)
+        MESSAGE(STATUS "Not using additional GNU Radio native architecture optimizations.")
+    ENDIF (ENABLE_NATIVE)
+ENDIF(UNIX)
+
+########################################################################
 # Install directories
 ########################################################################
-find_package(Gnuradio "3.8" REQUIRED)
+find_package(Gnuradio "3.8")
+if(NOT Gnuradio_FOUND)
+    find_package(Gnuradio "3.9")
+	if(NOT Gnuradio_FOUND)
+	    message(FATAL_ERROR "Unable to find GNURadio 3.8 or 3.9")
+	ENDIF(NOT Gnuradio_FOUND)
+ENDIF(NOT Gnuradio_FOUND)
 include(GrVersion)
 
 include(GrPlatform) #define LIB_SUFFIX
