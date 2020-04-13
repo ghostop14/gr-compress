@@ -36,7 +36,7 @@ namespace gr {
     class COMPRESS_API Packed12ToComplex : virtual public gr::sync_decimator
     {
      public:
-      typedef boost::shared_ptr<Packed12ToComplex> sptr;
+      typedef std::shared_ptr<Packed12ToComplex> sptr;
 
       /*!
        * \brief Return a shared_ptr to a new instance of compress::Packed12ToComplex.

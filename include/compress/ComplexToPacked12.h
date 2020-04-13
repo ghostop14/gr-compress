@@ -36,7 +36,7 @@ namespace gr {
     class COMPRESS_API ComplexToPacked12 : virtual public gr::sync_interpolator
     {
      public:
-      typedef boost::shared_ptr<ComplexToPacked12> sptr;
+      typedef std::shared_ptr<ComplexToPacked12> sptr;
 
       /*!
        * \brief Return a shared_ptr to a new instance of compress::ComplexToPacked12.

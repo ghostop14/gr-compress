@@ -38,7 +38,7 @@ namespace gr {
       class COMPRESS_API CompressedFileSink : virtual public gr::sync_block, virtual public file_sink_base
     {
      public:
-      typedef boost::shared_ptr<CompressedFileSink> sptr;
+      typedef std::shared_ptr<CompressedFileSink> sptr;
 
       /*!
        * \brief Return a shared_ptr to a new instance of compress::CompressedFileSink.

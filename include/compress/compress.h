@@ -36,7 +36,7 @@ namespace gr {
     class COMPRESS_API compress : virtual public gr::sync_block
     {
      public:
-      typedef boost::shared_ptr<compress> sptr;
+      typedef std::shared_ptr<compress> sptr;
 
       /*!
        * \brief Return a shared_ptr to a new instance of compress::compress.
