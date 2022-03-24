@@ -25,7 +25,7 @@
 #include <gnuradio/io_signature.h>
 #include "decompress_impl.h"
 #include "ZStdCompressor.h" // Need compression header definition
-
+#include <functional>
 namespace gr {
   namespace compress {
 
@@ -57,7 +57,7 @@ namespace gr {
     	localWriteBufferNextIndex = 0;
 
 		message_port_register_in(pmt::mp("compressedin"));
-        set_msg_handler(pmt::mp("compressedin"), boost::bind(&decompress_impl::compressedIn, this, _1) );
+        set_msg_handler(pmt::mp("compressedin"), std::bind(&decompress_impl::compressedIn, this, std::placeholders::_1) );
         message_port_register_out(pmt::mp("uncompressed"));
 
     }
