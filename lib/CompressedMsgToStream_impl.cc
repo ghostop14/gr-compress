@@ -25,7 +25,7 @@
 #include <gnuradio/io_signature.h>
 #include "CompressedMsgToStream_impl.h"
 #include "ZStdCompressor.h" // Need compression header definition
-
+#include <functional>
 namespace gr {
   namespace compress {
 
@@ -46,7 +46,7 @@ namespace gr {
     {
 
 		message_port_register_in(pmt::mp("compressed"));
-        set_msg_handler(pmt::mp("compressed"), boost::bind(&CompressedMsgToStream_impl::compressedIn, this, _1) );
+        set_msg_handler(pmt::mp("compressed"), std::bind(&CompressedMsgToStream_impl::compressedIn, this, std::placeholders::_1) );
     }
 
     /*

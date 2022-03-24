@@ -25,7 +25,7 @@
 #include <gnuradio/io_signature.h>
 #include <stdexcept>
 #include "ZStdCompressor.h"
-
+#include <functional>
 #include "CompressedFileSink_impl.h"
 
 namespace gr {
@@ -54,7 +54,7 @@ namespace gr {
     	do_update();
 
 		message_port_register_in(pmt::mp("compressedin"));
-        set_msg_handler(pmt::mp("compressedin"), boost::bind(&CompressedFileSink_impl::compressedIn, this, _1) );
+        set_msg_handler(pmt::mp("compressedin"), std::bind(&CompressedFileSink_impl::compressedIn, this, std::placeholders::_1) );
     }
 
 
